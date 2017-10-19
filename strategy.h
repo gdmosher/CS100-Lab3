@@ -1,6 +1,8 @@
 #ifndef __STRATEGY_H__
 #define __STRATEGY_H__
 
+#include "container.h"
+
 class Sort {
     public: 
         /* Constructors */

@@ -4,7 +4,9 @@
 #ifndef Op_hh
 #define Op_hh
 
-class Op
+#include "component.h"
+
+class Op : public Base
 {
   public:
     Op();
