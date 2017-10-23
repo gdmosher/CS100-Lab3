@@ -54,7 +54,7 @@ class Sub: public Operator {
     ~Sub();
     Sub (Base* left, Base* right) : Operator(left, right) {};
     double evaluate() {
-		return this->left->evaluate() + this->right->evaluate();
+		return this->left->evaluate() - this->right->evaluate();
 	};
 };
 
@@ -64,7 +64,17 @@ class Mult: public Operator {
     ~Mult();
     Mult (Base* left, Base* right) : Operator(left, right) {};
     double evaluate() {
-		return this->left->evaluate() + this->right->evaluate();
+		return this->left->evaluate() * this->right->evaluate();
+	};
+};
+
+class Divide: public Operator {
+  public:
+    Divide() : Operator(){ };
+    ~Divide();
+    Divide (Base* left, Base* right) : Operator(left, right) {};
+    double evaluate() {
+		return this->left->evaluate() / this->right->evaluate();
 	};
 };
 
@@ -72,9 +82,9 @@ class Sqr: public Operator {
   public:
     Sqr() : Operator(){ };
     ~Sqr();
-    Sqr (Base* left, Base* right) : Operator(left, right) {};
+    Sqr (Base* left) : Operator(left, right) {};
     double evaluate() {
-		return this->left->evaluate() + this->right->evaluate();
+		return this->left->evaluate() * this->left->evaluate();
 	};
 };
 

@@ -6,10 +6,25 @@
 class Sort {
     public: 
         /* Constructors */
-        Sort();
+        Sort(){};
 
         /* Pure Virtual Functions */
         virtual void sort(Container* container) = 0;
 };
 
+class SelectionSort: public Sort
+{
+    public:
+        SelectionSort(): Sort(){}
+        void sort(Container*);
+};
+
+class BubbleSort: public Sort
+{
+    public:
+        BubbleSort(): Sort(){}
+        void sort(Container*);
+};
+
+ 
 #endif // __STRATEGY_H__

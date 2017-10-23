@@ -1,15 +1,17 @@
 #ifndef __CONTAINER_H__
 #define __CONTAINER_H__
 
-
+#include "component.h"
 #include "strategy.h"
+class Sort;
+
 class Container {
     protected: 
         Sort* sort_function;
 
     public: 
-        /* Cosntructors */
-        Container() : sort_function(NULL) { }
+        /* Constructors */
+        Container() : sort_function() { }
         Container(Sort* function); 
 
         /* Non Virtual Functions */
