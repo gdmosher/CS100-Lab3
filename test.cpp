@@ -1,7 +1,7 @@
 #include <iostream>
 #include "component.h"
-//#include "vector_container.h"
-//#include "list_container.h"
+#include "vector_container.h"
+#include "list_container.h"
 #include "strategy.h"
 
 using namespace std;
@@ -16,8 +16,8 @@ int main() {
     Add* C = new Add(A, B);
     Sqr* D = new Sqr(C);
 
-    /*VectorContainer* container = new VectorContainer();
-    //ListContainer* container = new ListContainer();
+    VectorContainer* container = new VectorContainer();
+    ListContainer* container = new ListContainer();
     container->add_element(A);
     container->add_element(B);
     container->add_element(D);
@@ -27,7 +27,7 @@ int main() {
     container->sort();	
     cout << "Container After Sort: " << endl;
     container->print();
-    */
+    
     
     
 };

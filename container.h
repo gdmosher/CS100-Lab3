@@ -11,7 +11,7 @@ class Container {
 
     public: 
         /* Constructors */
-        Container() : sort_function() { }
+        Container() : sort_function(NULL) { }
         Container(Sort* function); 
 
         /* Non Virtual Functions */

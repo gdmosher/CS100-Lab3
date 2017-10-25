@@ -68,11 +68,11 @@ class Mult: public Operator {
 	};
 };
 
-class Divide: public Operator {
+class Div: public Operator {
   public:
-    Divide() : Operator(){ };
-    ~Divide();
-    Divide (Base* left, Base* right) : Operator(left, right) {};
+    Div() : Operator(){ };
+    ~Div();
+    Div (Base* left, Base* right) : Operator(left, right) {};
     double evaluate() {
 		return this->left->evaluate() / this->right->evaluate();
 	};
