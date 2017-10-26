@@ -7,6 +7,25 @@
 #include "container.h"
 #include "component.h"
 
+class noSortFunction2: public std::exception
+{
+	public:
+	virtual const char* what() const throw()
+	{
+		return "\nYou need to call the set_sort_function.\n";
+	}
+} mynosort2;
+
+bool checkSort2(Sort* sort_function) {
+	if (sort_function == 0) {
+//		throw noSortFunction("\nYou need to call the set_sort_function\n");
+		throw mynosort2;
+		return(0);
+	}
+	return(1);
+
+}
+
 class VectorContainer : public Container
 {
 	public:
@@ -25,18 +44,17 @@ class VectorContainer : public Container
 		void set_sort_function(Sort* sort_function) { this->sort_function = sort_function; }
 		
 		void sort() {
-			/*try {
-				if (sort_function == 0) {
-					throw noSortFunction("You need to call the set_sort_function");
+			try {
+				if (checkSort2(sort_function)) {
+					sort_function->sort(this);
 				}
-				sort_function->sort(this);
 			}
-			catch (const noSortFunction& e) {
-				std::cout << e.what() << std::endl;
-			}*/
-			sort_function->sort(this);
+			catch (const noSortFunction2& e)
+			{
+				std::cout << e.what();
+			}
 		}
-		
+
 		void swap(int i, int j){
 			Base* temp = cVector.at(i);
 			cVector.at(i) = cVector.at(j);

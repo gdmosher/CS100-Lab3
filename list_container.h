@@ -1,10 +1,31 @@
 #ifndef LIST_CONTAINER_H
 #define LIST_CONTAINER_H
 
+#include <iostream>
+#include <exception>
 #include <list>
 #include "strategy.h"
 #include "container.h"
 #include "component.h"
+
+class noSortFunction: public std::exception
+{
+	public:
+	virtual const char* what() const throw()
+	{
+		return "\nYou need to call the set_sort_function.\n";
+	}
+} mynosort;
+
+bool checkSort(Sort* sort_function) {
+	if (sort_function == 0) {
+//		throw noSortFunction("\nYou need to call the set_sort_function\n");
+		throw mynosort;
+		return(0);
+	}
+	return(1);
+
+}
 
 class ListContainer : public Container
 {
@@ -24,16 +45,15 @@ class ListContainer : public Container
 		void set_sort_function(Sort* sort_function) { this->sort_function = sort_function; }
 		
 		void sort() {
-			/*try {
-				if (sort_function == 0)
-					throw noSortFunction("You need to call the set_sort_function");
-				sort_function->sort(this);
+			try {
+				if (checkSort(sort_function)) {
+					sort_function->sort(this);
+				}
 			}
 			catch (const noSortFunction& e)
 			{
 				std::cout << e.what();
-			}*/
-			sort_function->sort(this);
+			}
 		}
 		
 		void swap(int i, int j) {
