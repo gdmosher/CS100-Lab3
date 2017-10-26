@@ -15,14 +15,14 @@ class Sort {
 class SelectionSort: public Sort
 {
     public:
-        SelectionSort() : Sort(){}
+//        SelectionSort() : Sort(){}
         void sort(Container*);
 };
 
 class BubbleSort: public Sort
 {
     public:
-        BubbleSort(): Sort(){}
+//        BubbleSort(): Sort(){}
         void sort(Container*);
 };
 
