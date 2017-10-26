@@ -3,6 +3,7 @@
 #include "vector_container.h"
 #include "list_container.h"
 #include "strategy.h"
+#include "operatordecorator.h"
 
 using namespace std;
 
@@ -22,6 +23,9 @@ int main() {
 /*  Extend test cases here */
     Div* E = new Div(D, op2);
     Mult* F = new Mult(E, op6);
+    Ceil* G = new Ceil(F);
+    Abs* H = new Abs(G);
+    Floor* I = new Floor(H);
 
     VectorContainer* v_container = new VectorContainer();
     v_container->add_element(A);
@@ -29,6 +33,9 @@ int main() {
     v_container->add_element(D);
     v_container->add_element(E);
     v_container->add_element(F);
+    v_container->add_element(G);
+    v_container->add_element(H);
+    v_container->add_element(I);
     cout << "Container Before Sort: " << endl;
     v_container->print();
     cout << endl;
@@ -44,6 +51,9 @@ int main() {
     l_container->add_element(D);
     l_container->add_element(E);
     l_container->add_element(F);
+    l_container->add_element(G);
+    l_container->add_element(H);
+    l_container->add_element(I);
     cout << "Container Before Sort: " << endl;
     l_container->print();
     cout << endl;
