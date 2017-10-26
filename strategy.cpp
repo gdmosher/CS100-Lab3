@@ -28,7 +28,8 @@ void BubbleSort::sort(Container* container) {
 	for(int i = 0; i < cSize - 1; i++) {
 		for(int j = 0; j < cSize - i - 1; j++) {
 			if (container->at(j)->evaluate() > container->at(j + 1)->evaluate()) {
-				container->swap(container->at(j)->evaluate(), container->at(j + 1)->evaluate());
+				container->swap(j,j+1);
+			//	container->swap(container->at(j)->evaluate(), container->at(j + 1)->evaluate());
 			}
 		}
 	}
