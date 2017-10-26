@@ -38,6 +38,12 @@ int main() {
     v_container->add_element(H);
     v_container->add_element(I);
     v_container->add_element(J);    
+    v_container->add_element(A);
+    v_container->add_element(A);
+    v_container->add_element(B);
+    v_container->add_element(B);
+    v_container->add_element(D);
+    v_container->add_element(D);
     cout << "Container Before Sort: " << endl;
     v_container->print();
     cout << endl;
