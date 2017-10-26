@@ -1,10 +1,9 @@
+#include <iostream>
 #include "strategy.h"
 #include "component.h"
 
 
-//Sort::Sort() {}
-
-//void SelectionSort::SelectionSort() : Sort() {}
+Sort::Sort() {}
 
 void SelectionSort::sort(Container* container) {
 	int cSize = container->size();
@@ -23,10 +22,9 @@ void SelectionSort::sort(Container* container) {
 	}
 }
 
-//BubbleSort::BubbleSort() : Sort() {}
-
 void BubbleSort::sort(Container* container) {
 	int cSize = container->size();
+	std::cout << "\nIn the BubbleSort. Container->size() is " << cSize << "\n";
 	for(int i = 0; i < cSize - 1; i++) {
 		for(int j = 0; j < cSize - i - 1; j++) {
 			if (container->at(j)->evaluate() > container->at(j + 1)->evaluate()) {
